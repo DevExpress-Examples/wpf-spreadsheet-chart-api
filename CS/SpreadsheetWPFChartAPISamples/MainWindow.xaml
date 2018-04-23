@@ -1,0 +1,58 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+    xmlns:dxdb="http://schemas.devexpress.com/winfx/2008/xaml/demobase"
+    xmlns:dxsps="http://schemas.devexpress.com/winfx/2008/xaml/spreadsheet"
+    xmlns:dxre="http://schemas.devexpress.com/winfx/2008/xaml/richedit"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:local="clr-namespace:SpreadsheetWPFChartAPISamples"
+    xmlns:dxo="http://schemas.devexpress.com/winfx/2008/xaml/office" 
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+    xmlns:UI="clr-namespace:DevExpress.Xpf.Spreadsheet.UI;assembly=DevExpress.Xpf.Spreadsheet.v14.1"
+    x:Class="SpreadsheetWPFChartAPISamples.MainWindow" Height="800" Width="1024"
+    dx:ThemeManager.ThemeName="Office2013">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="333"/>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="codeExampleNameLbl" Grid.Row="0" FontSize="26.667" SnapsToDevicePixels="True" Padding="9,0,0,4">Example:</Label>
+
+            <dx:DXTabControl x:Name="tabControl"  Grid.Row="1" Grid.Column="0" SelectionChanged="tabControl_SelectionChanged" >
+                <dx:DXTabItem Header="CS" Width="250">
+                    <dxre:RichEditControl x:Name="richEditControlCS" ActiveViewType="Simple" />
+                </dx:DXTabItem>
+                <dx:DXTabItem Header="VB" Width="250">
+                    <dxre:RichEditControl x:Name="richEditControlVB" ActiveViewType="Simple" />
+                </dx:DXTabItem>
+            </dx:DXTabControl>
+
+            <dxsps:SpreadsheetControl x:Name="spreadsheetControl1" Grid.Row="2" Grid.Column="0"/>
+
+            <dxg:TreeListControl x:Name="treeList1" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" CurrentItemChanged="OnNewExampleSelected"  >
+                <dxg:TreeListControl.Resources>
+                    <ResourceDictionary>
+                        <local:CodeExampleGroupChildrenSelector x:Key="childrenSelector"/>
+                    </ResourceDictionary>
+                </dxg:TreeListControl.Resources>
+
+                <dxg:TreeListControl.Columns>
+                    <dxg:TreeListColumn Header="Examples" FieldName="RegionName" AllowEditing="False" AllowBestFit="True" AllowDrop="False" AllowSearchPanel="False"/>
+                </dxg:TreeListControl.Columns>
+
+                <dxg:TreeListControl.View>
+                    <dxg:TreeListView x:Name="view" TreeDerivationMode="ChildNodesSelector" ChildNodesSelector="{StaticResource childrenSelector}" ShowIndicator="False" ShowColumnHeaders="False" AutoWidth="True" AllowPerPixelScrolling="False"  CustomColumnDisplayText="view_CustomColumnDisplayText"/>
+                </dxg:TreeListControl.View>
+            </dxg:TreeListControl>
+        </Grid>
+</Window>
