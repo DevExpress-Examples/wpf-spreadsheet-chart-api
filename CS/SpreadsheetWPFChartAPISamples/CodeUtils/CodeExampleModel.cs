@@ -329,7 +329,9 @@ namespace SpreadsheetChartAPISamples {
             var matches = Regex.Matches(sourceCode, RegexRegionPattern, RegexOptions.Singleline);
 
             foreach (var match in matches) {
-                string[] lines = match.ToString().Split(new string[] { "\r\n" }, StringSplitOptions.None);
+                string matchString = match.ToString();
+                string splitter = matchString.IndexOf("\r\n") >= 0 ? "\r\n" : "\n";
+                string[] lines = match.ToString().Split(new string[] { splitter }, StringSplitOptions.None);
 
                 if (lines.Length <= 2)
                     continue;
