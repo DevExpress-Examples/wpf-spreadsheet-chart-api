@@ -1,5 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Drawing
 Imports System.Globalization
 Imports DevExpress.Spreadsheet
@@ -8,117 +7,119 @@ Imports DevExpress.Spreadsheet.Drawings
 Imports DevExpress.Utils
 
 Namespace SpreadsheetChartAPIActions
-	Public NotInheritable Class ViewOptionsActions
-		Private Sub New()
-		End Sub
-		Private Shared Sub ShowAutomaticMarkers(ByVal workbook As IWorkbook)
-'			#Region "#ShowAutomaticMarkers"
-			Dim worksheet As Worksheet = workbook.Worksheets("chartTask5")
-			workbook.Worksheets.ActiveWorksheet = worksheet
+    Public NotInheritable Class ViewOptionsActions
 
-			' Create a chart and specify its location.
-			Dim chart As Chart = worksheet.Charts.Add(ChartType.Line, worksheet("B2:C8"))
-			chart.TopLeftCell = worksheet.Cells("F2")
-			chart.BottomRightCell = worksheet.Cells("L15")
+        Private Sub New()
+        End Sub
 
-			' Display markers using automatic style.
-			chart.Series(0).Marker.Symbol = MarkerStyle.Auto
-			' Hide the legend.
-			chart.Legend.Visible = False
+        Private Shared Sub ShowAutomaticMarkers(ByVal workbook As IWorkbook)
+'            #Region "#ShowAutomaticMarkers"
+            Dim worksheet As Worksheet = workbook.Worksheets("chartTask5")
+            workbook.Worksheets.ActiveWorksheet = worksheet
 
-'			#End Region ' #ShowAutomaticMarkers
-		End Sub
+            ' Create a chart and specify its location.
+            Dim chart As Chart = worksheet.Charts.Add(ChartType.Line, worksheet("B2:C8"))
+            chart.TopLeftCell = worksheet.Cells("F2")
+            chart.BottomRightCell = worksheet.Cells("L15")
 
-		Private Shared Sub ShowCustomMarkers(ByVal workbook As IWorkbook)
-'			#Region "#ShowCustomMarkers"
-			Dim worksheet As Worksheet = workbook.Worksheets("chartTask5")
-			workbook.Worksheets.ActiveWorksheet = worksheet
+            ' Display markers using automatic style.
+            chart.Series(0).Marker.Symbol = MarkerStyle.Auto
+            ' Hide the legend.
+            chart.Legend.Visible = False
 
-			' Create a chart and specify its location.
-			Dim chart As Chart = worksheet.Charts.Add(ChartType.Line, worksheet("B2:C8"))
-			chart.TopLeftCell = worksheet.Cells("F2")
-			chart.BottomRightCell = worksheet.Cells("L15")
+'            #End Region ' #ShowAutomaticMarkers
+        End Sub
 
-			' Display markers and specify the marker style.
-			chart.Series(0).Marker.Symbol = MarkerStyle.Circle
-			' Hide the legend.
-			chart.Legend.Visible = False
+        Private Shared Sub ShowCustomMarkers(ByVal workbook As IWorkbook)
+'            #Region "#ShowCustomMarkers"
+            Dim worksheet As Worksheet = workbook.Worksheets("chartTask5")
+            workbook.Worksheets.ActiveWorksheet = worksheet
 
-'			#End Region ' #ShowCustomMarkers
-		End Sub
+            ' Create a chart and specify its location.
+            Dim chart As Chart = worksheet.Charts.Add(ChartType.Line, worksheet("B2:C8"))
+            chart.TopLeftCell = worksheet.Cells("F2")
+            chart.BottomRightCell = worksheet.Cells("L15")
 
-		Private Shared Sub SetMarkerSize(ByVal workbook As IWorkbook)
-'			#Region "#SetMarkerSize"
-			Dim worksheet As Worksheet = workbook.Worksheets("chartTask5")
-			workbook.Worksheets.ActiveWorksheet = worksheet
+            ' Display markers and specify the marker style.
+            chart.Series(0).Marker.Symbol = MarkerStyle.Circle
+            ' Hide the legend.
+            chart.Legend.Visible = False
 
-			' Create a chart and specify its location.
-			Dim chart As Chart = worksheet.Charts.Add(ChartType.Line, worksheet("B2:C8"))
-			chart.TopLeftCell = worksheet.Cells("F2")
-			chart.BottomRightCell = worksheet.Cells("L15")
+'            #End Region ' #ShowCustomMarkers
+        End Sub
 
-			' Display markers and specify the marker style and size.
-			chart.Series(0).Marker.Symbol = MarkerStyle.Circle
-			chart.Series(0).Marker.Size = 15
-			' Hide the legend.
-			chart.Legend.Visible = False
+        Private Shared Sub SetMarkerSize(ByVal workbook As IWorkbook)
+'            #Region "#SetMarkerSize"
+            Dim worksheet As Worksheet = workbook.Worksheets("chartTask5")
+            workbook.Worksheets.ActiveWorksheet = worksheet
 
-'			#End Region ' #SetMarkerSize
-		End Sub
+            ' Create a chart and specify its location.
+            Dim chart As Chart = worksheet.Charts.Add(ChartType.Line, worksheet("B2:C8"))
+            chart.TopLeftCell = worksheet.Cells("F2")
+            chart.BottomRightCell = worksheet.Cells("L15")
 
-		Private Shared Sub SmoothLines(ByVal workbook As IWorkbook)
-'			#Region "#SmoothLines"
-			Dim worksheet As Worksheet = workbook.Worksheets("chartTask5")
-			workbook.Worksheets.ActiveWorksheet = worksheet
+            ' Display markers and specify the marker style and size.
+            chart.Series(0).Marker.Symbol = MarkerStyle.Circle
+            chart.Series(0).Marker.Size = 15
+            ' Hide the legend.
+            chart.Legend.Visible = False
 
-			' Create a chart and specify its location.
-			Dim chart As Chart = worksheet.Charts.Add(ChartType.LineMarker, worksheet("B2:C8"))
-			chart.TopLeftCell = worksheet.Cells("F2")
-			chart.BottomRightCell = worksheet.Cells("L15")
+'            #End Region ' #SetMarkerSize
+        End Sub
 
-			' Turn on curve smoothing.
-			chart.Series(0).Smooth = True
-			' Hide the legend.
-			chart.Legend.Visible = False
+        Private Shared Sub SmoothLines(ByVal workbook As IWorkbook)
+'            #Region "#SmoothLines"
+            Dim worksheet As Worksheet = workbook.Worksheets("chartTask5")
+            workbook.Worksheets.ActiveWorksheet = worksheet
 
-'			#End Region ' #SmoothLines
-		End Sub
+            ' Create a chart and specify its location.
+            Dim chart As Chart = worksheet.Charts.Add(ChartType.LineMarker, worksheet("B2:C8"))
+            chart.TopLeftCell = worksheet.Cells("F2")
+            chart.BottomRightCell = worksheet.Cells("L15")
 
-		Private Shared Sub GapWidth(ByVal workbook As IWorkbook)
-'			#Region "#GapWidth"
-			Dim worksheet As Worksheet = workbook.Worksheets("chartTask5")
-			workbook.Worksheets.ActiveWorksheet = worksheet
+            ' Turn on curve smoothing.
+            chart.Series(0).Smooth = True
+            ' Hide the legend.
+            chart.Legend.Visible = False
 
-			' Create a chart and specify its location.
-			Dim chart As Chart = worksheet.Charts.Add(ChartType.ColumnClustered, worksheet("B2:C8"))
-			chart.TopLeftCell = worksheet.Cells("F2")
-			chart.BottomRightCell = worksheet.Cells("L15")
+'            #End Region ' #SmoothLines
+        End Sub
 
-			' Set the gap width between data series.
-			chart.Views(0).GapWidth = 33
-			' Hide the legend.
-			chart.Legend.Visible = False
+        Private Shared Sub GapWidth(ByVal workbook As IWorkbook)
+'            #Region "#GapWidth"
+            Dim worksheet As Worksheet = workbook.Worksheets("chartTask5")
+            workbook.Worksheets.ActiveWorksheet = worksheet
 
-'			#End Region ' #GapWidth
-		End Sub
+            ' Create a chart and specify its location.
+            Dim chart As Chart = worksheet.Charts.Add(ChartType.ColumnClustered, worksheet("B2:C8"))
+            chart.TopLeftCell = worksheet.Cells("F2")
+            chart.BottomRightCell = worksheet.Cells("L15")
 
-		Private Shared Sub VaryColorsByPoint(ByVal workbook As IWorkbook)
-'			#Region "#VaryColorsByPoint"
-			Dim worksheet As Worksheet = workbook.Worksheets("chartTask5")
-			workbook.Worksheets.ActiveWorksheet = worksheet
+            ' Set the gap width between data series.
+            chart.Views(0).GapWidth = 33
+            ' Hide the legend.
+            chart.Legend.Visible = False
 
-			' Create a chart and specify its location.
-			Dim chart As Chart = worksheet.Charts.Add(ChartType.ColumnClustered, worksheet("B2:C8"))
-			chart.TopLeftCell = worksheet.Cells("F2")
-			chart.BottomRightCell = worksheet.Cells("L15")
+'            #End Region ' #GapWidth
+        End Sub
 
-			' Specify that each data point in the series has a different color.
-			chart.Views(0).VaryColors = True
-			' Hide the legend.
-			chart.Legend.Visible = False
+        Private Shared Sub VaryColorsByPoint(ByVal workbook As IWorkbook)
+'            #Region "#VaryColorsByPoint"
+            Dim worksheet As Worksheet = workbook.Worksheets("chartTask5")
+            workbook.Worksheets.ActiveWorksheet = worksheet
 
-'			#End Region ' #VaryColorsByPoint
-		End Sub
+            ' Create a chart and specify its location.
+            Dim chart As Chart = worksheet.Charts.Add(ChartType.ColumnClustered, worksheet("B2:C8"))
+            chart.TopLeftCell = worksheet.Cells("F2")
+            chart.BottomRightCell = worksheet.Cells("L15")
 
-	End Class
+            ' Specify that each data point in the series has a different color.
+            chart.Views(0).VaryColors = True
+            ' Hide the legend.
+            chart.Legend.Visible = False
+
+'            #End Region ' #VaryColorsByPoint
+        End Sub
+
+    End Class
 End Namespace

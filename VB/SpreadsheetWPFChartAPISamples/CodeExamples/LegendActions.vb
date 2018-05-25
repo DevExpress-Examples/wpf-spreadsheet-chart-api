@@ -1,5 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Drawing
 Imports System.Globalization
 Imports DevExpress.Spreadsheet
@@ -8,56 +7,58 @@ Imports DevExpress.Spreadsheet.Drawings
 Imports DevExpress.Utils
 
 Namespace SpreadsheetChartAPIActions
-	Public NotInheritable Class LegendActions
-		Private Sub New()
-		End Sub
-		Private Shared Sub HideLegend(ByVal workbook As IWorkbook)
-'			#Region "#HideLegend"
-			Dim worksheet As Worksheet = workbook.Worksheets("chartTask3")
-			workbook.Worksheets.ActiveWorksheet = worksheet
+    Public NotInheritable Class LegendActions
 
-			' Create a chart and specify its location.
-			Dim chart As Chart = worksheet.Charts.Add(ChartType.ColumnClustered, worksheet("B2:F6"))
-			chart.TopLeftCell = worksheet.Cells("H2")
-			chart.BottomRightCell = worksheet.Cells("N14")
+        Private Sub New()
+        End Sub
 
-			' Hide the legend.
-			chart.Legend.Visible = False
+        Private Shared Sub HideLegend(ByVal workbook As IWorkbook)
+'            #Region "#HideLegend"
+            Dim worksheet As Worksheet = workbook.Worksheets("chartTask3")
+            workbook.Worksheets.ActiveWorksheet = worksheet
 
-'			#End Region ' #HideLegend
-		End Sub
+            ' Create a chart and specify its location.
+            Dim chart As Chart = worksheet.Charts.Add(ChartType.ColumnClustered, worksheet("B2:F6"))
+            chart.TopLeftCell = worksheet.Cells("H2")
+            chart.BottomRightCell = worksheet.Cells("N14")
 
-		Private Shared Sub SetLegendPosition(ByVal workbook As IWorkbook)
-'			#Region "#SetLegendPosition"
-			Dim worksheet As Worksheet = workbook.Worksheets("chartTask3")
-			workbook.Worksheets.ActiveWorksheet = worksheet
+            ' Hide the legend.
+            chart.Legend.Visible = False
 
-			' Create a chart and specify its location.
-			Dim chart As Chart = worksheet.Charts.Add(ChartType.ColumnClustered, worksheet("B2:F6"))
-			chart.TopLeftCell = worksheet.Cells("H2")
-			chart.BottomRightCell = worksheet.Cells("N14")
+'            #End Region ' #HideLegend
+        End Sub
 
-			' Specify the position of the legend.
-			chart.Legend.Position = LegendPosition.Bottom
+        Private Shared Sub SetLegendPosition(ByVal workbook As IWorkbook)
+'            #Region "#SetLegendPosition"
+            Dim worksheet As Worksheet = workbook.Worksheets("chartTask3")
+            workbook.Worksheets.ActiveWorksheet = worksheet
 
-'			#End Region ' #SetLegendPosition
-		End Sub
+            ' Create a chart and specify its location.
+            Dim chart As Chart = worksheet.Charts.Add(ChartType.ColumnClustered, worksheet("B2:F6"))
+            chart.TopLeftCell = worksheet.Cells("H2")
+            chart.BottomRightCell = worksheet.Cells("N14")
 
-		Private Shared Sub ExcludeLegendEntry(ByVal workbook As IWorkbook)
-'			#Region "#ExcludeLegendEntry"
-			Dim worksheet As Worksheet = workbook.Worksheets("chartTask3")
-			workbook.Worksheets.ActiveWorksheet = worksheet
+            ' Specify the position of the legend.
+            chart.Legend.Position = LegendPosition.Bottom
 
-			' Create a chart and specify its location.
-			Dim chart As Chart = worksheet.Charts.Add(ChartType.ColumnClustered, worksheet("B2:F6"))
-			chart.TopLeftCell = worksheet.Cells("H2")
-			chart.BottomRightCell = worksheet.Cells("N14")
+'            #End Region ' #SetLegendPosition
+        End Sub
 
-			' Exclude entries from the legend.
-			chart.Legend.CustomEntries.Add(2).Hidden = True
-			chart.Legend.CustomEntries.Add(3).Hidden = True
+        Private Shared Sub ExcludeLegendEntry(ByVal workbook As IWorkbook)
+'            #Region "#ExcludeLegendEntry"
+            Dim worksheet As Worksheet = workbook.Worksheets("chartTask3")
+            workbook.Worksheets.ActiveWorksheet = worksheet
 
-'			#End Region ' #ExcludeLegendEntry
-		End Sub
-	End Class
+            ' Create a chart and specify its location.
+            Dim chart As Chart = worksheet.Charts.Add(ChartType.ColumnClustered, worksheet("B2:F6"))
+            chart.TopLeftCell = worksheet.Cells("H2")
+            chart.BottomRightCell = worksheet.Cells("N14")
+
+            ' Exclude entries from the legend.
+            chart.Legend.CustomEntries.Add(2).Hidden = True
+            chart.Legend.CustomEntries.Add(3).Hidden = True
+
+'            #End Region ' #ExcludeLegendEntry
+        End Sub
+    End Class
 End Namespace

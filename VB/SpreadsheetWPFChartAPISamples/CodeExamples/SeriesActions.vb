@@ -1,5 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Drawing
 Imports System.Globalization
 Imports DevExpress.Spreadsheet
@@ -8,96 +7,98 @@ Imports DevExpress.Spreadsheet.Drawings
 Imports DevExpress.Utils
 
 Namespace SpreadsheetChartAPIActions
-	Public NotInheritable Class SeriesActions
-		Private Sub New()
-		End Sub
-		Private Shared Sub RemoveSeries(ByVal workbook As IWorkbook)
-'			#Region "#RemoveSeries"
-			Dim worksheet As Worksheet = workbook.Worksheets("chartTask3")
-			workbook.Worksheets.ActiveWorksheet = worksheet
+    Public NotInheritable Class SeriesActions
 
-			' Create a chart and specify its location.
-			Dim chart As Chart = worksheet.Charts.Add(ChartType.ColumnClustered, worksheet("B2:E6"))
-			chart.TopLeftCell = worksheet.Cells("H2")
-			chart.BottomRightCell = worksheet.Cells("N14")
+        Private Sub New()
+        End Sub
 
-			' Remove the series.
-			chart.Series.RemoveAt(1)
+        Private Shared Sub RemoveSeries(ByVal workbook As IWorkbook)
+'            #Region "#RemoveSeries"
+            Dim worksheet As Worksheet = workbook.Worksheets("chartTask3")
+            workbook.Worksheets.ActiveWorksheet = worksheet
 
-'			#End Region ' #RemoveSeries
-		End Sub
+            ' Create a chart and specify its location.
+            Dim chart As Chart = worksheet.Charts.Add(ChartType.ColumnClustered, worksheet("B2:E6"))
+            chart.TopLeftCell = worksheet.Cells("H2")
+            chart.BottomRightCell = worksheet.Cells("N14")
 
-		Private Shared Sub ChangeSeriesOrder(ByVal workbook As IWorkbook)
-'			#Region "#ChangeSeriesOrder"
-			Dim worksheet As Worksheet = workbook.Worksheets("chartTask3")
-			workbook.Worksheets.ActiveWorksheet = worksheet
+            ' Remove the series.
+            chart.Series.RemoveAt(1)
 
-			' Create a chart and specify its location.
-			Dim chart As Chart = worksheet.Charts.Add(ChartType.ColumnClustered, worksheet("B2:D6"))
-			chart.TopLeftCell = worksheet.Cells("H2")
-			chart.BottomRightCell = worksheet.Cells("N14")
+'            #End Region ' #RemoveSeries
+        End Sub
 
-			' Change the series order.
-			chart.Series(1).BringForward()
+        Private Shared Sub ChangeSeriesOrder(ByVal workbook As IWorkbook)
+'            #Region "#ChangeSeriesOrder"
+            Dim worksheet As Worksheet = workbook.Worksheets("chartTask3")
+            workbook.Worksheets.ActiveWorksheet = worksheet
 
-'			#End Region ' #ChangeSeriesOrder
-		End Sub
+            ' Create a chart and specify its location.
+            Dim chart As Chart = worksheet.Charts.Add(ChartType.ColumnClustered, worksheet("B2:D6"))
+            chart.TopLeftCell = worksheet.Cells("H2")
+            chart.BottomRightCell = worksheet.Cells("N14")
 
-		Private Shared Sub UseSecondaryAxes(ByVal workbook As IWorkbook)
-'			#Region "#UseSecondaryAxes"
-			Dim worksheet As Worksheet = workbook.Worksheets("chartTask5")
-			workbook.Worksheets.ActiveWorksheet = worksheet
+            ' Change the series order.
+            chart.Series(1).BringForward()
 
-			' Create a chart and specify its location.
-			Dim chart As Chart = worksheet.Charts.Add(ChartType.LineMarker, worksheet("B2:D8"))
-			chart.TopLeftCell = worksheet.Cells("F2")
-			chart.BottomRightCell = worksheet.Cells("L15")
+'            #End Region ' #ChangeSeriesOrder
+        End Sub
 
-			' Use the secondary axis.
-			chart.Series(1).AxisGroup = AxisGroup.Secondary
+        Private Shared Sub UseSecondaryAxes(ByVal workbook As IWorkbook)
+'            #Region "#UseSecondaryAxes"
+            Dim worksheet As Worksheet = workbook.Worksheets("chartTask5")
+            workbook.Worksheets.ActiveWorksheet = worksheet
 
-			' Specify the position of the legend.
-			chart.Legend.Position = LegendPosition.Top
+            ' Create a chart and specify its location.
+            Dim chart As Chart = worksheet.Charts.Add(ChartType.LineMarker, worksheet("B2:D8"))
+            chart.TopLeftCell = worksheet.Cells("F2")
+            chart.BottomRightCell = worksheet.Cells("L15")
 
-'			#End Region ' #UseSecondaryAxes
-		End Sub
+            ' Use the secondary axis.
+            chart.Series(1).AxisGroup = AxisGroup.Secondary
 
-		Private Shared Sub ChangeSeriesType(ByVal workbook As IWorkbook)
-'			#Region "#ChangeSeriesType"
-			Dim worksheet As Worksheet = workbook.Worksheets("chartTask5")
-			workbook.Worksheets.ActiveWorksheet = worksheet
+            ' Specify the position of the legend.
+            chart.Legend.Position = LegendPosition.Top
 
-			' Create a chart and specify its location.
-			Dim chart As Chart = worksheet.Charts.Add(ChartType.LineMarker, worksheet("B2:D8"))
-			chart.TopLeftCell = worksheet.Cells("F2")
-			chart.BottomRightCell = worksheet.Cells("L15")
+'            #End Region ' #UseSecondaryAxes
+        End Sub
 
-			' Change the type of the second series.
-			chart.Series(1).ChangeType(ChartType.ColumnClustered)
+        Private Shared Sub ChangeSeriesType(ByVal workbook As IWorkbook)
+'            #Region "#ChangeSeriesType"
+            Dim worksheet As Worksheet = workbook.Worksheets("chartTask5")
+            workbook.Worksheets.ActiveWorksheet = worksheet
 
-			' Use the secondary axis.
-			chart.Series(1).AxisGroup = AxisGroup.Secondary
+            ' Create a chart and specify its location.
+            Dim chart As Chart = worksheet.Charts.Add(ChartType.LineMarker, worksheet("B2:D8"))
+            chart.TopLeftCell = worksheet.Cells("F2")
+            chart.BottomRightCell = worksheet.Cells("L15")
 
-			' Specify the position of the legend.
-			chart.Legend.Position = LegendPosition.Top
+            ' Change the type of the second series.
+            chart.Series(1).ChangeType(ChartType.ColumnClustered)
 
-'			#End Region ' #ChangeSeriesType
-		End Sub
-		Private Shared Sub ChangeSeriesArguments(ByVal workbook As IWorkbook)
-'			#Region "#ChangeSeriesArgumentsAndValues"
-			Dim worksheet As Worksheet = workbook.Worksheets("Sheet1")
-			workbook.Worksheets.ActiveWorksheet = worksheet
-			workbook.BeginUpdate()
+            ' Use the secondary axis.
+            chart.Series(1).AxisGroup = AxisGroup.Secondary
 
-			' Create a chart.
-			Dim chart As Chart = worksheet.Charts.Add(ChartType.LineMarker, worksheet(0,0))
-			' Specify arguments.
-			chart.Series(0).Arguments = New CellValue() {1,2,3}
-			' Specify values.
-			chart.Series(0).Values = New CellValue() { 30, 20, 10 }
+            ' Specify the position of the legend.
+            chart.Legend.Position = LegendPosition.Top
 
-			workbook.EndUpdate()
-'			#End Region ' #ChangeSeriesArgumentsAndValues
-		End Sub
-	End Class
+'            #End Region ' #ChangeSeriesType
+        End Sub
+        Private Shared Sub ChangeSeriesArguments(ByVal workbook As IWorkbook)
+'            #Region "#ChangeSeriesArgumentsAndValues"
+            Dim worksheet As Worksheet = workbook.Worksheets("Sheet1")
+            workbook.Worksheets.ActiveWorksheet = worksheet
+            workbook.BeginUpdate()
+
+            ' Create a chart.
+            Dim chart As Chart = worksheet.Charts.Add(ChartType.LineMarker, worksheet(0,0))
+            ' Specify arguments.
+            chart.Series(0).Arguments = New CellValue() {1,2,3}
+            ' Specify values.
+            chart.Series(0).Values = New CellValue() { 30, 20, 10 }
+
+            workbook.EndUpdate()
+'            #End Region ' #ChangeSeriesArgumentsAndValues
+        End Sub
+    End Class
 End Namespace
