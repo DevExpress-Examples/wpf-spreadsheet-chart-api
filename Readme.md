@@ -1,3 +1,17 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [AxesActions.cs](./CS/SpreadsheetWPFChartAPISamples/CodeExamples/AxesActions.cs) (VB: [AxesActions.vb](./VB/SpreadsheetWPFChartAPISamples/CodeExamples/AxesActions.vb))
+* [Charts.cs](./CS/SpreadsheetWPFChartAPISamples/CodeExamples/Charts.cs) (VB: [Charts.vb](./VB/SpreadsheetWPFChartAPISamples/CodeExamples/Charts.vb))
+* [CreationAndDataActions.cs](./CS/SpreadsheetWPFChartAPISamples/CodeExamples/CreationAndDataActions.cs) (VB: [CreationAndDataActions.vb](./VB/SpreadsheetWPFChartAPISamples/CodeExamples/CreationAndDataActions.vb))
+* [DataLabelsActions.cs](./CS/SpreadsheetWPFChartAPISamples/CodeExamples/DataLabelsActions.cs) (VB: [DataLabelsActions.vb](./VB/SpreadsheetWPFChartAPISamples/CodeExamples/DataLabelsActions.vb))
+* [LegendActions.cs](./CS/SpreadsheetWPFChartAPISamples/CodeExamples/LegendActions.cs) (VB: [LegendActions.vb](./VB/SpreadsheetWPFChartAPISamples/CodeExamples/LegendActions.vb))
+* [Protection.cs](./CS/SpreadsheetWPFChartAPISamples/CodeExamples/Protection.cs) (VB: [Protection.vb](./VB/SpreadsheetWPFChartAPISamples/CodeExamples/Protection.vb))
+* [SeriesActions.cs](./CS/SpreadsheetWPFChartAPISamples/CodeExamples/SeriesActions.cs) (VB: [SeriesActions.vb](./VB/SpreadsheetWPFChartAPISamples/CodeExamples/SeriesActions.vb))
+* [StyleActions.cs](./CS/SpreadsheetWPFChartAPISamples/CodeExamples/StyleActions.cs) (VB: [StyleActions.vb](./VB/SpreadsheetWPFChartAPISamples/CodeExamples/StyleActions.vb))
+* [TitlesActions.cs](./CS/SpreadsheetWPFChartAPISamples/CodeExamples/TitlesActions.cs) (VB: [TitlesActions.vb](./VB/SpreadsheetWPFChartAPISamples/CodeExamples/TitlesActions.vb))
+* [ViewOptionsActions.cs](./CS/SpreadsheetWPFChartAPISamples/CodeExamples/ViewOptionsActions.cs) (VB: [ViewOptionsActions.vb](./VB/SpreadsheetWPFChartAPISamples/CodeExamples/ViewOptionsActions.vb))
+<!-- default file list end -->
 # WPF Spreadsheet Chart API
 
 
