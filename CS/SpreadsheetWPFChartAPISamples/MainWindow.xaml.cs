@@ -56,7 +56,7 @@ namespace SpreadsheetWPFChartAPISamples
                 sheet.PrintOptions.PrintGridlines = true;
 
             Worksheet firstSheet = workbook.Worksheets[0];
-            Range usedRange = firstSheet.GetUsedRange();
+            CellRange usedRange = firstSheet.GetUsedRange();
             firstSheet.SelectedCell = usedRange[usedRange.RowCount * usedRange.ColumnCount - 1].Offset(1, 1);
 
             if (codeEditor != null)

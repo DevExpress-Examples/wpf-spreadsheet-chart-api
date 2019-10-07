@@ -10,7 +10,7 @@
     xmlns:local="clr-namespace:SpreadsheetWPFChartAPISamples"
     xmlns:dxo="http://schemas.devexpress.com/winfx/2008/xaml/office" 
     xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
-    xmlns:UI="clr-namespace:DevExpress.Xpf.Spreadsheet.UI;assembly=DevExpress.Xpf.Spreadsheet.v17.2"
+    xmlns:UI="clr-namespace:DevExpress.Xpf.Spreadsheet.UI;assembly=DevExpress.Xpf.Spreadsheet.v19.2"
     x:Class="SpreadsheetWPFChartAPISamples.MainWindow" Height="800" Width="1024"
     dx:ThemeManager.ThemeName="Office2013">
 
