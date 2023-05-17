@@ -138,7 +138,7 @@ Namespace SpreadsheetChartAPIActions
 
             ' Specify print settings.
             chartSheet.ActiveView.Orientation = PageOrientation.Landscape
-            chartSheet.ActiveView.PaperKind = System.Drawing.Printing.PaperKind.Letter
+            chartSheet.ActiveView.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.Letter
 
             ' Specify page margins.
             Dim pageMargins As Margins = chartSheet.ActiveView.Margins
