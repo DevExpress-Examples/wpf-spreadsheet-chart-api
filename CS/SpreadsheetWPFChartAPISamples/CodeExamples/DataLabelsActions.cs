@@ -121,5 +121,24 @@ namespace SpreadsheetChartAPIActions {
 
             #endregion #DataLabelsSeparator
         }
+
+        static void DataLabelsFromCells(IWorkbook workbook)
+        {
+            #region #DataLabelsFromCells
+            Worksheet worksheet = workbook.Worksheets["chartTask5"];
+            workbook.Worksheets.ActiveWorksheet = worksheet;
+
+            // Create a chart and specify its location
+            Chart chart = worksheet.Charts.Add(ChartType.ColumnClustered, worksheet["B2:C8"]);
+            chart.TopLeftCell = worksheet.Cells["F2"];
+            chart.BottomRightCell = worksheet.Cells["L15"];
+            // Specify the chart style
+            chart.Style = ChartStyle.ColorGradient;
+
+            chart.Series[0].UseCustomDataLabels = true;
+            var customDataLabels = chart.Series[0].CustomDataLabels;
+            customDataLabels.SetReference("D3:D8");
+            #endregion #DataLabelsFromCells
+        }
     }
 }
