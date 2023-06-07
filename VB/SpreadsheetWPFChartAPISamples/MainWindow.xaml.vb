@@ -1,4 +1,5 @@
 ﻿Imports DevExpress.Spreadsheet
+Imports DevExpress.Xpf.Core
 Imports DevExpress.Xpf.Grid
 Imports SpreadsheetChartAPISamples
 Imports System
@@ -23,7 +24,7 @@ Namespace SpreadsheetWPFChartAPISamples
     ''' Interaction logic for MainWindow.xaml
     ''' </summary>
     Partial Public Class MainWindow
-        Inherits Window
+        Inherits ThemedWindow
 
         Private codeEditor As ExampleCodeEditor
         Private evaluator As ExampleEvaluatorByTimer

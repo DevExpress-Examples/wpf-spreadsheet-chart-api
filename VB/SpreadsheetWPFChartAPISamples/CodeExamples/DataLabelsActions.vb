@@ -101,7 +101,7 @@ Namespace SpreadsheetChartAPIActions
         End Sub
 
         Private Shared Sub DataLabelsSeparator(ByVal workbook As IWorkbook)
-'            #Region "#DataLabelsSeparator"
+            '            #Region "#DataLabelsSeparator"
             Dim worksheet As Worksheet = workbook.Worksheets("chartTask1")
             workbook.Worksheets.ActiveWorksheet = worksheet
 
@@ -123,7 +123,25 @@ Namespace SpreadsheetChartAPIActions
             ' Set the angle of the first pie-chart slice.
             chart.Views(0).FirstSliceAngle = 100
 
-'            #End Region ' #DataLabelsSeparator
+            '            #End Region ' #DataLabelsSeparator
+        End Sub
+
+        Private Shared Sub DataLabelsFromCells(ByVal workbook As IWorkbook)
+            '            #Region "#DataLabelsFromCells"
+            Dim worksheet As Worksheet = workbook.Worksheets("chartTask5")
+            workbook.Worksheets.ActiveWorksheet = worksheet
+
+            ' Create a chart and specify its location
+            Dim chart As Chart = worksheet.Charts.Add(ChartType.ColumnClustered, worksheet("B2:C8"))
+            chart.TopLeftCell = worksheet.Cells("F2")
+            chart.BottomRightCell = worksheet.Cells("L15")
+
+            ' Specify the chart style
+            chart.Style = ChartStyle.ColorGradient
+            chart.Series(0).UseCustomDataLabels = True
+            Dim customDataLabels = chart.Series(0).CustomDataLabels
+            customDataLabels.SetReference("D3:D8")
+            '            #End Region ' #DataLabelsFromCells
         End Sub
     End Class
 End Namespace
