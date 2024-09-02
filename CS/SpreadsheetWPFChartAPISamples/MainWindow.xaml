@@ -11,7 +11,7 @@
     xmlns:local="clr-namespace:SpreadsheetWPFChartAPISamples"
     xmlns:dxo="http://schemas.devexpress.com/winfx/2008/xaml/office"
     xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
-    xmlns:UI="clr-namespace:DevExpress.Xpf.Spreadsheet.UI;assembly=DevExpress.Xpf.Spreadsheet.v23.1">
+    xmlns:UI="clr-namespace:DevExpress.Xpf.Spreadsheet.UI;assembly=DevExpress.Xpf.Spreadsheet.v24.2">
 
         <Grid>
             <Grid.RowDefinitions>
