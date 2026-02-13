@@ -24,7 +24,7 @@ You can modify the code and watch the result. The code is executed every two sec
 * [Spreadsheet Chart Overview](https://docs.devexpress.com/WPF/16442/controls-and-libraries/spreadsheet/charts-and-graphics/charting-overview)
 * [Spreadsheet Chart Examples](https://docs.devexpress.com/WPF/119713/controls-and-libraries/spreadsheet/examples/charts)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-spreadsheet-chart-api&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-spreadsheet-chart-api&~~~was_helpful=no)
 
